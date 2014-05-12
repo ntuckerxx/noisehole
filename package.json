@@ -1,0 +1,29 @@
+{
+  "author": "Neal Tucker",
+  "name": "noisehole",
+  "description": "music collection monitor/server",
+  "version": "0.0.1",
+  "dependencies": {
+    "rimraf": "^2.2.6",
+    "watch": "^0.10.0",
+    "wrench": "^1.5.8",
+    "when": "^3.1.0",
+    "MD5": "^1.2.1",
+    "sqlite3": "^2.2.3",
+    "id3js": "git+ssh://git@github.com:ntuckerxx/id3.git",
+    "directorymonitor": "git+ssh://git@github.com:ntuckerxx/directorymonitor.git"
+  },
+  "scripts": {
+    "start": "node colmon.js",
+    "test": "tapr test/test-*"
+  },
+  "devDependencies": {
+    "nodeunit": "~0.8.6",
+    "tap": "^0.4.8",
+    "tapr": "^0.1.3",
+    "node-uuid": "^1.4.1"
+  },
+  "engines": {
+    "node": "*"
+  }
+}
