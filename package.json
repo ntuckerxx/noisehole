@@ -2,7 +2,7 @@
   "author": "Neal Tucker",
   "name": "noisehole",
   "description": "music collection monitor/server",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "./lib/noisehole.js",
   "dependencies": {
     "rimraf": "^2.2.6",
