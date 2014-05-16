@@ -23,7 +23,8 @@ CREATE VIEW IF NOT EXISTS track_album_artist AS
         tracks.directory_id AS directory_id,
         tracks.path AS path,
         tracks.path_hash AS path_hash,
-        tracks.title AS title
+        tracks.title AS title,
+        tracks.seq AS track_num
     FROM tracks
     JOIN artists ON tracks.artist_id = artists.id
     JOIN albums ON tracks.album_id = albums.id;
@@ -44,11 +45,12 @@ BEGIN
         SELECT id FROM albums WHERE name = NEW.album_name
     );
 
-    INSERT INTO tracks (directory_id, path, path_hash, title, artist_id, album_id)
+    INSERT INTO tracks (directory_id, path, path_hash, title, seq, artist_id, album_id)
         SELECT NEW.directory_id,
             NEW.path,
             NEW.path_hash,
             NEW.title,
+            NEW.track_num,
             artists.id AS artist_id,
             albums.id AS album_id
             FROM artists JOIN albums ON artists.name = NEW.artist_name AND albums.name = NEW.album_name
